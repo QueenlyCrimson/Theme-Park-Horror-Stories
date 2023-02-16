@@ -34,7 +34,10 @@ const App = () => {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/createstory" element={<CreateStory />} />
+          <Route
+            path="/createstory"
+            element={<CreateStory stories={stories} setStories={setStories} />}
+          />
         </Routes>
       </main>
     </div>
