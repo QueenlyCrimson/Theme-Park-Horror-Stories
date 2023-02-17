@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
-import Story from "./Story"
+import Story from "./StoryTitle"
 import { Route } from "react-router-dom"
 
 const Home = ({ stories, setStories }) => {
