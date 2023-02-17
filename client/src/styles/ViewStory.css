@@ -18,10 +18,14 @@
   color: #ffdc9a;
   width: 125px;
   font-size: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
-  background-color: #310b00;
+  background-color: #ffdc9a;
+  color: #3f0e00;
+  transform: translateY(-2px);
 }
 
 .btn:active {
