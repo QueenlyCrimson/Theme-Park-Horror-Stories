@@ -7,7 +7,7 @@ const Story = (props) => {
       </div>
       <div className="content">
         <p>{props.content}</p>
-        <button>View Story</button>
+        <button>View Comments</button>
       </div>
     </div>
   )
