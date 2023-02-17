@@ -10,7 +10,8 @@ html {
 }
 
 .story-title {
-  border: 0.2vh white solid;
+  border: 0.2vh solid #3f0e00;
+  border-width: 5px;
   margin: 5vh;
   color: #ffdc9a;
   background-color: #000;

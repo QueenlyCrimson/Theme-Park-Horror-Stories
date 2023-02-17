@@ -14,17 +14,17 @@
   margin: 8px;
   padding: 10px;
   border-width: 0;
-  background-color: white;
-  color: black;
+  background-color: #3f0e00;
+  color: #ffdc9a;
   width: 125px;
   font-size: 15px;
 }
 
 .btn:hover {
-  background-color: #cfbfbf;
+  background-color: #310b00;
 }
 
 .btn:active {
-  background-color: #cfbfbf;
+  background-color: #310b00;
   transform: translateY(4px);
 }

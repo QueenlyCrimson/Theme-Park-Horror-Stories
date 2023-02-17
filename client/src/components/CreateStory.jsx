@@ -47,7 +47,7 @@ const CreateStory = ({ stories, setStories }) => {
       />
       <label htmlFor="image">Image URL:</label>
       <input
-        type="file"
+        type="text"
         className="createStory-input"
         name="image"
         id="image"
