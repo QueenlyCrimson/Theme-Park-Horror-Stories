@@ -1,17 +1,6 @@
-const Story = require('../models/story')
 const Story = require("../models/story")
 
 const createStory = async (req, res) => {
-    try {
-        const story = await new Story(req.body)
-        await story.save()
-        return res.status(201).json({
-            story,
-        })
-    } catch (error) {
-        return res.status(500).json({ error: error.message })
-    }
-}
   try {
     const story = await new Story(req.body)
     await story.save()
@@ -24,13 +13,6 @@ const createStory = async (req, res) => {
 }
 
 const getAllStories = async (req, res) => {
-    try {
-        const stories = await Story.find()
-        return res.status(200).json({ stories })
-    } catch (error) {
-        return res.status(500).send(error.message)
-    }
-}
   try {
     const stories = await Story.find()
     return res.status(200).json({ stories })
@@ -41,7 +23,6 @@ const getAllStories = async (req, res) => {
 
 const getStoryById = async (req, res) => {
   try {
-
     const { id } = req.params
     const story = await Story.findById(id)
 
@@ -55,15 +36,6 @@ const getStoryById = async (req, res) => {
 }
 
 const updateStory = async (req, res) => {
-    try {
-        const story = await Story.findByIdAndUpdate(req.params.id, req.body, {
-            new: true,
-        })
-        res.status(200).json(story)
-    } catch (error) {
-        return res.status(500).send(error.message)
-    }
-}
   try {
     const story = await Story.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -75,22 +47,12 @@ const updateStory = async (req, res) => {
 }
 
 const deleteStory = async (req, res) => {
-    try {
-        const { id } = req.params
-        const deleted = await Story.findByIdAndDelete(id)
-        if (deleted) {
-            return res.status(200).send('Story deleted')
-        }
-        throw new Error('Story not found')
-    } catch (error) {
-        return res.status(500).send(error.message)
   try {
     const { id } = req.params
     const deleted = await Story.findByIdAndDelete(id)
     if (deleted) {
       return res.status(200).send("Story deleted")
     }
-}
     throw new Error("Story not found")
   } catch (error) {
     return res.status(500).send(error.message)
@@ -98,12 +60,6 @@ const deleteStory = async (req, res) => {
 }
 
 module.exports = {
-    createStory,
-    getAllStories,
-    getStoryById,
-    updateStory,
-    deleteStory,
-}
   createStory,
   getAllStories,
   getStoryById,
