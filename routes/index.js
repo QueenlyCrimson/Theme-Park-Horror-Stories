@@ -6,6 +6,7 @@ const commentController = require('../controllers/comments')
 router.get('/', (req, res) => res.send('This is Root!'))
 
 // post controllers
+
 router.post('/stories/create', storyController.createStory)
 router.post('/comments/create/:storyId', commentController.createComment)
 
