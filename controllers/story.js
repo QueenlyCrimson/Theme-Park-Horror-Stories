@@ -63,7 +63,7 @@ const deleteStory = async (req, res) => {
 module.exports = {
   createStory,
   getAllStories,
-  getStoryByName,
+  getStoryById,
   updateStory,
   deleteStory,
 };
