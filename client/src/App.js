@@ -10,6 +10,21 @@ import { Route, Routes, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 const App = () => {
+  let navigate = useNavigate()
+
+  const [stories, setStories] = useState([])
+
+  const getAllStories = async () => {
+    const res = await axios.get("http://localhost:3001/stories")
+    console.log(res)
+    setStories(res.data.stories)
+  }
+  console.log(stories)
+
+  useEffect(() => {
+    getAllStories()
+  }, [])
+
   return (
     <div className="App">
       <header>

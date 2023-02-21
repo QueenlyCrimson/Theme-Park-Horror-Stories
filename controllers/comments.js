@@ -45,7 +45,7 @@ const deleteComment = async (req, res) => {
   }
 };
 
-const getComments = async (req, res) => {
+const getCommentsByStoryId = async (req, res) => {
   try {
     const { id } = req.params;
     const comment = await Comment.find({ figure_id: `${id}` });
@@ -63,5 +63,5 @@ module.exports = {
   getAllComments,
   updateComment,
   deleteComment,
-  getComments,
+  getCommentsByStoryId,
 };
