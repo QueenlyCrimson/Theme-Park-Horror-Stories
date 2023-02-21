@@ -14,17 +14,6 @@ const App = () => {
 
   const [stories, setStories] = useState([])
 
-  const getAllStories = async () => {
-    const res = await axios.get("http://localhost:3001/stories")
-    console.log(res)
-    setStories(res.data.stories)
-  }
-  console.log(stories)
-
-  useEffect(() => {
-    getAllStories()
-  }, [])
-
   return (
     <div className="App">
       <header>
@@ -32,7 +21,10 @@ const App = () => {
       </header>
       <main>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route
+            path="/"
+            element={<Home stories={stories} setStories={setStories} />}
+          />
           <Route path="/about" element={<About />} />
           <Route
             path="/createstory"
