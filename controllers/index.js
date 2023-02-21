@@ -26,7 +26,7 @@ const getAllStories = async (req, res) => {
   }
 };
 
-const getStoryByName = async (req, res) => {
+const getStoryById = async (req, res) => {
   try {
     const { Name } = req.params;
     const story = await Story.findById(Name);
@@ -110,7 +110,7 @@ const deleteComment = async (req, res) => {
   }
 };
 
-const getComments = async (req, res) => {
+const getCommentsByStoryId = async (req, res) => {
   try {
     const { id } = req.params;
     const comment = await Comment.find({ figure_id: `${id}` });
@@ -133,5 +133,5 @@ module.exports = {
   getAllComments,
   updateComment,
   deleteComment,
-  getComments,
+  getCommentsByStoryId,
 };
