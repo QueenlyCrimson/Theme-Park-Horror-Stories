@@ -1,4 +1,6 @@
+
 const Story = require("../models/story");
+
 
 const createStory = async (req, res) => {
   try {
@@ -23,9 +25,8 @@ const getAllStories = async (req, res) => {
 
 const getStoryById = async (req, res) => {
   try {
-    const { id } = req.params;
-    const story = await Story.findById(id);
-
+    const { id } = req.params
+    const story = await Story.findById(id)
     if (story) {
       return res.status(200).json({ story });
     }
@@ -55,7 +56,7 @@ const deleteStory = async (req, res) => {
     if (deleted) {
       return res.status(200).send("Story deleted");
     }
-    throw new Error("Story not found");
+    throw new Error("Story not found")
   } catch (error) {
     return res.status(500).send(error.message);
   }
