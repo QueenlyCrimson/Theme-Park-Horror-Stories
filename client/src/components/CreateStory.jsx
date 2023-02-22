@@ -29,9 +29,12 @@ const CreateStory = ({ stories, setStories }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='title'>Title:</label>
+        <form className='createStory-container' onSubmit={handleSubmit}>
+            <label className='createStory-label' htmlFor='title'>
+                Title:
+            </label>
             <input
+                className='createStory-input'
                 type='text'
                 name='title'
                 id='title'
@@ -41,6 +44,7 @@ const CreateStory = ({ stories, setStories }) => {
             <label htmlFor='image'>Image URL:</label>
             <input
                 type='text'
+                className='createStory-input'
                 name='image'
                 id='image'
                 onChange={handleChange}
@@ -49,6 +53,7 @@ const CreateStory = ({ stories, setStories }) => {
             <label htmlFor='park'>Park Name:</label>
             <input
                 type='text'
+                className='createStory-input'
                 name='park'
                 id='park'
                 onChange={handleChange}
@@ -57,6 +62,7 @@ const CreateStory = ({ stories, setStories }) => {
             <label htmlFor='date'>Date of Event:</label>
             <input
                 type='text'
+                className='createStory-input'
                 name='date'
                 id='date'
                 onChange={handleChange}
@@ -65,6 +71,7 @@ const CreateStory = ({ stories, setStories }) => {
             <label htmlFor='content'>Share Story:</label>
             <textarea
                 id='content'
+                className='createStory-textarea'
                 name='content'
                 cols='30'
                 rows='10'
