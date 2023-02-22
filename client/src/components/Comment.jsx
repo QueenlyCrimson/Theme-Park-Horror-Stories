@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const Comment = (props) => {
+    const [comments, setComments] = useState([])
     const getComments = async () => {
-        const [comments, setComments] = useState([])
-
         const res = await axios.get(
             `http://localhost:3001/comments/story/${props.id}`
         )
@@ -22,9 +21,9 @@ const Comment = (props) => {
                 <div key={comment._id}>
                     <p>
                         <br />
-                        Name: {comment.name}
+                        username: {comment.username}
                         <br />
-                        Comment:{comment.comment}
+                        content:{comment.content}
                         <br />
                     </p>
                 </div>
