@@ -7,8 +7,8 @@ const Comment = (props) => {
         const res = await axios.get(
             `http://localhost:3001/comments/story/${props.id}`
         )
-        console.log(res.data)
-        setComments(res.data)
+        console.log(res.data.comment)
+        setComments(res.data.comment)
     }
 
     useEffect(() => {
