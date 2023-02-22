@@ -3,11 +3,12 @@ import axios from 'axios'
 
 const Comment = (props) => {
     const [comments, setComments] = useState([])
+    console.log(props)
     const getComments = async () => {
         const res = await axios.get(
             `http://localhost:3001/comments/story/${props.id}`
         )
-        console.log(res.data.comment)
+        console.log(res.data)
         setComments(res.data.comment)
     }
 
