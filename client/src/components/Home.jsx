@@ -3,6 +3,7 @@ import axios from "axios"
 import Story from "./StoryTitle"
 import { Route } from "react-router-dom"
 import StoryTitle from "./StoryTitle"
+import '../styles/Home.css'
 
 const Home = ({ stories, setStories }) => {
   const getAllStories = async () => {

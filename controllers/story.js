@@ -23,8 +23,8 @@ const getAllStories = async (req, res) => {
 
 const getStoryById = async (req, res) => {
   try {
-    const { Name } = req.params;
-    const story = await Story.findById(Name);
+    const { id } = req.params;
+    const story = await Story.findById(id);
     if (story) {
       return res.status(200).json({ story });
     }
