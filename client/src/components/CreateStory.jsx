@@ -12,6 +12,7 @@ const CreateStory = ({ stories, setStories }) => {
     content: "",
   })
 
+
   let navigate = useNavigate()
 
   const handleChange = (e) => {
@@ -85,6 +86,7 @@ const CreateStory = ({ stories, setStories }) => {
       <button type="submit">Add Story</button>
     </form>
   )
+
 }
 
 export default CreateStory
