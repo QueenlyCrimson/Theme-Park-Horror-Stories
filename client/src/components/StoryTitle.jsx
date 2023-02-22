@@ -11,6 +11,7 @@ const StoryTitle = (props) => {
   return (
     <div className="story-title">
       {props.title}
+      <img className="story-image" src={props.image} ></img>
       <button onClick={() => handleClick()} id={props.id}>
         View Story
       </button>
