@@ -1,0 +1,10 @@
+.display-stories {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  align-items: center;
+}
+
+.story-title {
+  border: 2px black solid;
+}
