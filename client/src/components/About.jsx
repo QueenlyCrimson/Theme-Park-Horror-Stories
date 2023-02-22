@@ -1,8 +1,10 @@
+import '../styles/About.css'
+
 const About = (props) => {
     return (
-        <div>
-            <h3>About Horror Park</h3>
-            <h5>
+        <div className='about-container'>
+            <h3 className='about-header'>About Horror Park</h3>
+            <h5 className='about-content'>
                 Welcome to our website dedicated to theme park horror stories.
                 <br />
                 Here, we share some of the scariest and most unsettling
