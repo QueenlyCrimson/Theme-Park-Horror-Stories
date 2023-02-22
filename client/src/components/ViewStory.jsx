@@ -1,8 +1,10 @@
 import axios from "axios"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 const ViewStory = ({ stories }) => {
+  let navigate = useNavigate()
+
   const [story, setStory] = useState({})
   const { id } = useParams()
 
@@ -10,6 +12,11 @@ const ViewStory = ({ stories }) => {
     const res = await axios.get(`http://localhost:3001/stories/${id}`)
     setStory(res.data.story)
     console.log(res.data.story)
+  }
+
+  const deleteStory = async () => {
+    await axios.delete(`http://localhost:3001/stories/delete/${id}`)
+    navigate("/")
   }
 
   useEffect(() => {
@@ -23,6 +30,9 @@ const ViewStory = ({ stories }) => {
       <h3>{story.date}</h3>
       <h3>{story.park}</h3>
       <p>{story.content}</p>
+      <button id="delete-story" onClick={() => deleteStory()}>
+        Delete Story
+      </button>
     </div>
   )
 }

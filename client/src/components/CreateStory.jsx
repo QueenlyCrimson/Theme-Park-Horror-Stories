@@ -1,40 +1,44 @@
-import { useState } from 'react'
-import axios from 'axios'
-import '../styles/CreateStory.css'
+import { useState } from "react"
+import axios from "axios"
+import "../styles/CreateStory.css"
+import { useNavigate } from "react-router-dom"
 
 const CreateStory = ({ stories, setStories }) => {
-    const [newStory, setNewStory] = useState({
-        title: '',
-        image: '',
-        park: '',
-        date: '',
-        content: '',
-    })
+  const [newStory, setNewStory] = useState({
+    title: "",
+    image: "",
+    park: "",
+    date: "",
+    content: "",
+  })
 
+  let navigate = useNavigate()
 
   const handleChange = (e) => {
-    const {name , value} = e.target 
-    setNewStory((prevState)=>(
-      {...prevState, [name]: value}
-    ))
+    const { name, value } = e.target
+    setNewStory((prevState) => ({ ...prevState, [name]: value }))
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3001/stories/create', newStory)
-    .then((response)=> {
-      console.log(response)
-    })
-    .catch((error) => {
-      console.error(error)
-    })
+    axios
+      .post("http://localhost:3001/stories/create", newStory)
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+    navigate("/")
   }
 
   return (
-    <form className='createStory-container' onSubmit={handleSubmit}>
-      <label className='createStory-label' htmlFor="title">Title:</label>
+    <form className="createStory-container" onSubmit={handleSubmit}>
+      <label className="createStory-label" htmlFor="title">
+        Title:
+      </label>
       <input
-        className='createStory-input'
+        className="createStory-input"
         type="text"
         name="title"
         id="title"
@@ -44,7 +48,7 @@ const CreateStory = ({ stories, setStories }) => {
       <label htmlFor="image">Image URL:</label>
       <input
         type="text"
-        className='createStory-input'
+        className="createStory-input"
         name="image"
         id="image"
         onChange={handleChange}
@@ -53,7 +57,7 @@ const CreateStory = ({ stories, setStories }) => {
       <label htmlFor="park">Park Name:</label>
       <input
         type="text"
-        className='createStory-input'
+        className="createStory-input"
         name="park"
         id="park"
         onChange={handleChange}
@@ -62,7 +66,7 @@ const CreateStory = ({ stories, setStories }) => {
       <label htmlFor="date">Date of Event:</label>
       <input
         type="text"
-        className='createStory-input'
+        className="createStory-input"
         name="date"
         id="date"
         onChange={handleChange}
@@ -71,7 +75,7 @@ const CreateStory = ({ stories, setStories }) => {
       <label htmlFor="content">Share Story:</label>
       <textarea
         id="content"
-        className='createStory-textarea'
+        className="createStory-textarea"
         name="content"
         cols="30"
         rows="10"
@@ -81,7 +85,6 @@ const CreateStory = ({ stories, setStories }) => {
       <button type="submit">Add Story</button>
     </form>
   )
-
 }
 
 export default CreateStory
