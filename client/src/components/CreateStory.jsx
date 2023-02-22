@@ -12,86 +12,65 @@ const CreateStory = ({ stories, setStories }) => {
     })
 
     const handleChange = (e) => {
-        setNewStory({ ...newStory, [e.target.id]: e.target.value })
-    }
-
-    const createStory = async (e) => {
-        e.preventDefault()
-        let res = await axios.post(
-            'http://localhost:3001/stories/create',
-            newStory
-        )
-        let currentStories = stories
-        currentStories.push(res.data.story)
-        setStories(currentStories)
-        setNewStory({
-            title: '',
-            image: '',
-            park: '',
-            date: '',
-            content: '',
-        })
+        const { name, value } = e.target
+        setNewStory((prevState) => ({ ...prevState, [name]: value }))
     }
 
     const handleSubmit = (e) => {
-        createStory(e)
+        e.preventDefault()
+        axios
+            .post('http://localhost:3001/stories/create', newStory)
+            .then((response) => {
+                console.log(response)
+            })
+            .catch((error) => {
+                console.error(error)
+            })
     }
 
     return (
-        <form className='createStory-container' onSubmit={handleSubmit}>
-            <label className='createStory-label' htmlFor='title'>
-                Title:
-            </label>
+        <form onSubmit={handleSubmit}>
+            <label htmlFor='title'>Title:</label>
             <input
-                className='createStory-input'
                 type='text'
+                name='title'
                 id='title'
                 onChange={handleChange}
                 value={newStory.title}
             />
-            <label className='createStory-label' htmlFor='image'>
-                Image URL:
-            </label>
+            <label htmlFor='image'>Image URL:</label>
             <input
-                className='createStory-input'
-                type='file'
+                type='text'
+                name='image'
                 id='image'
                 onChange={handleChange}
                 value={newStory.image}
             />
-            <label className='createStory-label' htmlFor='park'>
-                Park Name:
-            </label>
+            <label htmlFor='park'>Park Name:</label>
             <input
-                className='createStory-input'
                 type='text'
+                name='park'
                 id='park'
                 onChange={handleChange}
                 value={newStory.park}
             />
-            <label className='createStory-label' htmlFor='date'>
-                Date of Event:
-            </label>
+            <label htmlFor='date'>Date of Event:</label>
             <input
-                className='createStory-input'
                 type='text'
+                name='date'
                 id='date'
                 onChange={handleChange}
                 value={newStory.date}
             />
-            <label className='createStory-label' htmlFor='content'>
-                Share Story:
-            </label>
+            <label htmlFor='content'>Share Story:</label>
             <textarea
-                className='createStory-textarea'
                 id='content'
+                name='content'
                 cols='30'
                 rows='10'
                 onChange={handleChange}
                 value={newStory.content}></textarea>
-            <button className='createStory-button' type='submit'>
-                Add Story
-            </button>
+            <button type='submit'>Add Story</button>
         </form>
     )
 }
