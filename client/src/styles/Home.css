@@ -5,6 +5,25 @@
   align-items: center;
 }
 
+html {
+  background-color: #000;
+}
+
 .story-title {
-  border: 2px black solid;
+  border: 0.2vh white solid;
+  margin: 5vh;
+  color: #ffdc9a;
+  background-color: #000;
+  padding: 2vh;
+}
+
+.story-image {
+  max-width: 30vh;
+}
+
+.Home {
+  position:absolute;
+  align-self: center;
+  left:42.5%;
+  
 }
