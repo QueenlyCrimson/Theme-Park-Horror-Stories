@@ -11,26 +11,21 @@ const CreateStory = ({ stories, setStories }) => {
   })
 
   const handleChange = (e) => {
-    setNewStory({ ...newStory, [e.target.id]: e.target.value })
-  }
-
-  const createStory = async (e) => {
-    e.preventDefault()
-    let res = await axios.post("http://localhost:3001/stories/create", newStory)
-    let currentStories = stories
-    currentStories.push(res.data.story)
-    setStories(currentStories)
-    setNewStory({
-      title: "",
-      image: "",
-      park: "",
-      date: "",
-      content: "",
-    })
+    const {name , value} = e.target 
+    setNewStory((prevState)=>(
+      {...prevState, [name]: value}
+    ))
   }
 
   const handleSubmit = (e) => {
-    createStory(e)
+    e.preventDefault()
+    axios.post('http://localhost:3001/stories/create', newStory)
+    .then((response)=> {
+      console.log(response)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
   }
 
   return (
@@ -38,6 +33,7 @@ const CreateStory = ({ stories, setStories }) => {
       <label htmlFor="title">Title:</label>
       <input
         type="text"
+        name="title"
         id="title"
         onChange={handleChange}
         value={newStory.title}
@@ -45,6 +41,7 @@ const CreateStory = ({ stories, setStories }) => {
       <label htmlFor="image">Image URL:</label>
       <input
         type="text"
+        name="image"
         id="image"
         onChange={handleChange}
         value={newStory.image}
@@ -52,6 +49,7 @@ const CreateStory = ({ stories, setStories }) => {
       <label htmlFor="park">Park Name:</label>
       <input
         type="text"
+        name="park"
         id="park"
         onChange={handleChange}
         value={newStory.park}
@@ -59,6 +57,7 @@ const CreateStory = ({ stories, setStories }) => {
       <label htmlFor="date">Date of Event:</label>
       <input
         type="text"
+        name="date"
         id="date"
         onChange={handleChange}
         value={newStory.date}
@@ -66,6 +65,7 @@ const CreateStory = ({ stories, setStories }) => {
       <label htmlFor="content">Share Story:</label>
       <textarea
         id="content"
+        name="content"
         cols="30"
         rows="10"
         onChange={handleChange}
