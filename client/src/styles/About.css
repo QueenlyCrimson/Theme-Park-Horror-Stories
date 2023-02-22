@@ -1,0 +1,28 @@
+.about-container {
+    background-color: black;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.about-header {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px #ff0000;
+}
+
+.about-content {
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.about-content:before {
+    content: '🎃 ';
+}
+
+.about-content:after {
+    content: ' 💀';
+}
