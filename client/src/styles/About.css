@@ -1,6 +1,6 @@
 .about-container {
     background-color: black;
-    color: white;
+    color: #ffdc9a;
     padding: 30px;
     border-radius: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -10,7 +10,8 @@
     font-size: 36px;
     margin-bottom: 20px;
     text-align: center;
-    text-shadow: 2px 2px 4px #ff0000;
+    color: #ffdc9a;
+    text-shadow: 2px 2px 4px #3f0e00;
 }
 
 .about-content {

@@ -1,0 +1,35 @@
+.createStory-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: #ffdc9a;
+    padding: 30px;
+    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.createStory-label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.createStory-input,
+.createStory-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.createStory-button {
+    background-color: #ffdc9a;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
