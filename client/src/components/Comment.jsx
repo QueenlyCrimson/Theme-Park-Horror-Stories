@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react'
-
-const getComments = async () => {
-    const [comments, setComments] = useState([])
-
-    const res = await axios.get(
-        `http://localhost:3001/comments/story/${stories_id}`
-    )
-    console.log(res.data)
-}
-
-useEffect(() => {
-    getComments()
-}, [])
+import axios from 'axios'
 
 const Comment = (props) => {
+    const getComments = async () => {
+        const [comments, setComments] = useState([])
+
+        const res = await axios.get(
+            `http://localhost:3001/comments/story/${props.id}`
+        )
+        console.log(res.data)
+        setComments(res.data)
+    }
+
+    useEffect(() => {
+        getComments()
+    }, [])
+
     return (
         <div>
             {comments.map((comment) => (
