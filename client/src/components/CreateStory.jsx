@@ -31,7 +31,6 @@ const CreateStory = ({ stories, setStories }) => {
             })
         navigate('/app')
     }
-
     return (
         <form className='createStory-container' onSubmit={handleSubmit}>
             <label className='createStory-label' htmlFor='title'>
@@ -86,6 +85,7 @@ const CreateStory = ({ stories, setStories }) => {
             </button>
         </form>
     )
+
 }
 
 export default CreateStory
