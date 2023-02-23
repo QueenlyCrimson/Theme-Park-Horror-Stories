@@ -1,17 +1,13 @@
 import './App.css'
-import axios from 'axios'
 import Home from './components/Home'
 import About from './components/About'
-import StoryTitle from './components/StoryTitle'
 import ViewStory from './components/ViewStory'
 import NavBar from './components/NavBar'
 import CreateStory from './components/CreateStory'
-import { Route, Routes, useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import { useState } from 'react'
 
 const App = () => {
-    let navigate = useNavigate()
-
     const [stories, setStories] = useState([])
 
     return (

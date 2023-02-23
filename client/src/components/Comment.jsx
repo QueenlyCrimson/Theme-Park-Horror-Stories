@@ -4,10 +4,8 @@ import '../styles/Comment.css'
 
 const Comment = (props) => {
     const [comments, setComments] = useState([])
-    console.log(props)
     const getComments = async () => {
         const res = await axios.get(`/app/comments/story/${props.id}`)
-        console.log(res.data)
         setComments(res.data.comment)
     }
 

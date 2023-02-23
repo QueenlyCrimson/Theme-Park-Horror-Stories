@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 const StoryTitle = (props) => {
@@ -9,7 +8,7 @@ const StoryTitle = (props) => {
     }
 
     return (
-        <div className='story-title'>
+        <div className='story-title' key='${props.id}'>
             {props.title}
             <img className='story-image' src={props.image}></img>
             <button className='btn' onClick={() => handleClick()} id={props.id}>
