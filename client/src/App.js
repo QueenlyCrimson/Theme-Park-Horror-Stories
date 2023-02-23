@@ -22,7 +22,7 @@ const App = () => {
             <main>
                 <Routes>
                     <Route
-                        path='/app'
+                        path='/'
                         element={
                             <Home stories={stories} setStories={setStories} />
                         }

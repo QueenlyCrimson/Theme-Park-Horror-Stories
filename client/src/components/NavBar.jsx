@@ -12,7 +12,7 @@ const NavBar = (props) => {
                 <NavLink to='/about' className='navlink'>
                     ABOUT
                 </NavLink>
-                <NavLink to='/createstory' className='navlink'>
+                <NavLink to='/app/createstory' className='navlink'>
                     ADD STORY
                 </NavLink>
             </div>

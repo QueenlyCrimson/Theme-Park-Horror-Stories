@@ -17,7 +17,7 @@ const ViewStory = ({ stories }) => {
     }
 
     const deleteStory = async () => {
-        await axios.delete(`/app/stories/delete/${id}`)
+        await axios.delete(`${BASE_URL}/app/stories/delete/${id}`)
         navigate('/app')
     }
 
