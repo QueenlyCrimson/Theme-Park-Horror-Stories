@@ -32,10 +32,10 @@ const ViewStory = ({ stories }) => {
       <h3>{story.date}</h3>
       <h3>{story.park}</h3>
       <p>{story.content}</p>
-      <button id="delete-story" onClick={() => deleteStory()}>
+      <button className="btn" onClick={() => deleteStory()}>
         Delete Story
       </button>
-      <Comment id={id} />
+      <Comment id={story._id} />
     </div>
   )
 }
