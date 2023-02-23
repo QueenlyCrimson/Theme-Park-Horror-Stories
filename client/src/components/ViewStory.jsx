@@ -2,6 +2,7 @@ import axios from "axios"
 import { useParams, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Comment from "./Comment"
+import '../styles/ViewStory.css'
 
 const ViewStory = ({ stories }) => {
   let navigate = useNavigate()

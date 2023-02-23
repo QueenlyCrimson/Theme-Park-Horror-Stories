@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import '../styles/Comment.css'
 
 const Comment = (props) => {
     const [comments, setComments] = useState([])
@@ -19,12 +20,12 @@ const Comment = (props) => {
     return (
         <div>
             {comments.map((comment) => (
-                <div key={comment._id}>
+                <div className='comment-text' key={comment._id}>
                     <p>
                         <br />
                         username: {comment.username}
                         <br />
-                        content:{comment.content}
+                        content: {comment.content}
                         <br />
                     </p>
                 </div>
