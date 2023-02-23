@@ -1,6 +1,6 @@
 import '../styles/About.css'
 
-const About = (props) => {
+const About = () => {
     return (
         <div className='about-container'>
             <h3 className='about-header'>About Horror Park</h3>

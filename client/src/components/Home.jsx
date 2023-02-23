@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import axios from 'axios'
-import Story from './StoryTitle'
-import { Route } from 'react-router-dom'
 import StoryTitle from './StoryTitle'
 import '../styles/Home.css'
 
@@ -17,7 +15,7 @@ const Home = ({ stories, setStories }) => {
 
     return (
         <div className='Home'>
-            <div className='display-stories'>
+            <div className='display-stories' key='{stories._id}'>
                 {stories.map((story) => (
                     <StoryTitle
                         id={story._id}
