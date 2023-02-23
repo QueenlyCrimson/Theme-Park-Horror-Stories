@@ -7,20 +7,17 @@ router.get('/app', (req, res) => res.send('This is Root!'))
 
 // post controllers
 
-router.post('/app/stories/create', storyController.createStory)
-router.post('/app/comments/create/:storyId', commentController.createComment)
+router.post('/stories/create', storyController.createStory)
+router.post('/comments/create/:storyId', commentController.createComment)
 
 // get controllers
-router.get('/app/stories', storyController.getAllStories)
-router.get('/app/stories/:id', storyController.getStoryById)
-router.get('/app/comments', commentController.getAllComments)
-router.get(
-    '/app/comments/story/:storyId',
-    commentController.getCommentsByStoryId
-)
+router.get('/stories', storyController.getAllStories)
+router.get('/stories/:id', storyController.getStoryById)
+router.get('/comments', commentController.getAllComments)
+router.get('/comments/story/:storyId', commentController.getCommentsByStoryId)
 
 // delete controllers
-router.delete('/app/stories/delete/:id', storyController.deleteStory)
-router.delete('/app/comments/delete/:id', commentController.deleteComment)
+router.delete('/stories/delete/:id', storyController.deleteStory)
+router.delete('/comments/delete/:id', commentController.deleteComment)
 
 module.exports = router
