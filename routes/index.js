@@ -3,7 +3,7 @@ const router = Router()
 const storyController = require('../controllers/story')
 const commentController = require('../controllers/comments')
 
-router.get('/', (req, res) => res.send('This is Root!'))
+router.get('/app', (req, res) => res.send('This is Root!'))
 
 // post controllers
 

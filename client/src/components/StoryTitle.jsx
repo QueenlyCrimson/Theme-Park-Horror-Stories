@@ -1,22 +1,22 @@
-import axios from "axios"
-import { useNavigate } from "react-router-dom"
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const StoryTitle = (props) => {
-  let navigate = useNavigate()
+    let navigate = useNavigate()
 
-  const handleClick = () => {
-    navigate(`/viewstory/${props.id}`)
-  }
+    const handleClick = () => {
+        navigate(`/app/viewstory/${props.id}`)
+    }
 
-  return (
-    <div className="story-title">
-      {props.title}
-      <img className="story-image" src={props.image}></img>
-      <button className="btn" onClick={() => handleClick()} id={props.id}>
-        View Story
-      </button>
-    </div>
-  )
+    return (
+        <div className='story-title'>
+            {props.title}
+            <img className='story-image' src={props.image}></img>
+            <button className='btn' onClick={() => handleClick()} id={props.id}>
+                View Story
+            </button>
+        </div>
+    )
 }
 
 export default StoryTitle
