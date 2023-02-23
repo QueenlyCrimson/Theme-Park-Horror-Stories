@@ -11,14 +11,14 @@ const ViewStory = ({ stories }) => {
     const { id } = useParams()
 
     const getStoryById = async () => {
-        const res = await axios.get(`http://localhost:3001/stories/${id}`)
+        const res = await axios.get(`/app/stories/${id}`)
         setStory(res.data.story)
         console.log(res.data.story)
     }
 
     const deleteStory = async () => {
-        await axios.delete(`/stories/delete/${id}`)
-        navigate('/')
+        await axios.delete(`/app/stories/delete/${id}`)
+        navigate('/app')
     }
 
     useEffect(() => {

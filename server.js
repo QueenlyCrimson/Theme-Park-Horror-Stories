@@ -11,7 +11,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(logger('dev'))
-app.use('/', routes)
+app.use('/app', routes)
 app.use(express.static(`${__dirname}/client/build`))
 
 db.on('error', console.error.bind(console, 'MongoDB Connection Error:'))

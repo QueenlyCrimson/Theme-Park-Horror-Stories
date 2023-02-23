@@ -22,14 +22,14 @@ const CreateStory = ({ stories, setStories }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         axios
-            .post('/stories/create', newStory)
+            .post('/app/stories/create', newStory)
             .then((response) => {
                 console.log(response)
             })
             .catch((error) => {
                 console.error(error)
             })
-        navigate('/')
+        navigate('/app')
     }
 
     return (

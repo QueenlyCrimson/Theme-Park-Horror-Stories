@@ -7,7 +7,7 @@ import '../styles/Home.css'
 
 const Home = ({ stories, setStories }) => {
     const getAllStories = async () => {
-        const res = await axios.get('/stories')
+        const res = await axios.get('/app/stories')
         setStories(res.data.stories)
     }
 
