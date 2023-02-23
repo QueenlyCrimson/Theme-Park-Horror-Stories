@@ -1,3 +1,30 @@
 .full-story {
   color: #ffdc9a;
 }
+
+.full-story p{
+  padding: 25px;
+}
+
+.full-story h3, h1, img{
+  margin-top: 15px;
+}
+
+.btn {
+  margin: 8px;
+  padding: 10px;
+  border-width: 0;
+  background-color: white;
+  color: black;
+  width: 125px;
+  font-size: 15px;
+}
+
+.btn:hover {
+  background-color: #cfbfbf;
+}
+
+.btn:active {
+  background-color: #cfbfbf;
+  transform: translateY(4px);
+}
